@@ -23,3 +23,15 @@ export function checkGuess(guess, answer) {
     };
   });
 }
+
+export const hasWonOrLost = (guesses, answer) => {
+  const hasGuessedWord = guesses.filter(guess => guess.guess === answer)
+  console.log(hasGuessedWord)
+  if (hasGuessedWord.length > 0) {
+    return 'win'
+  } else if (guesses.length === 6) {
+    return 'lose'
+  } else {
+    return null
+  }
+}
